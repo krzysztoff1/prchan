@@ -1,10 +1,7 @@
-import Image from "next/image";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Our Itineraries - Prchan Tourism",
-  description: "Explore our curated travel itineraries across Poland and Europe. From Kraków to Berlin, we have the perfect trip for you.",
-};
+import Image from "next/image";
+import { FadeIn } from "@/components/ScrollAnimation";
 
 const itineraries = [
   {
@@ -70,8 +67,9 @@ export default function TripsPage() {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {itineraries.map((itinerary, index) => (
-            <div
+            <FadeIn
               key={itinerary.title}
+              direction={index % 2 === 0 ? "left" : "right"}
               className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 py-16 ${
                 index !== itineraries.length - 1 ? "border-b border-gray-100" : ""
               }`}
@@ -103,14 +101,14 @@ export default function TripsPage() {
                   />
                 </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </section>
 
       {/* Newsletter Section */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
+        <FadeIn className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
             Join Our Newsletter
           </h2>
@@ -128,7 +126,7 @@ export default function TripsPage() {
               Subscribe
             </button>
           </form>
-        </div>
+        </FadeIn>
       </section>
     </>
   );

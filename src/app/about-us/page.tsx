@@ -1,11 +1,8 @@
-import Image from "next/image";
-import type { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About us - Prchan Tourism",
-  description: "Prchan Tourism sp. z o.o. is a Poland based Destination Management Company operating from Krakow and specializing in incoming tours to Europe from all over the world.",
-};
+import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ScrollAnimation";
 
 const services = [
   "Create customized travel itineraries and propose accommodations according to the customers requirement",
@@ -30,7 +27,9 @@ export default function AboutUsPage() {
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="relative z-10 px-4 max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-white">About Prchan Tourism</h1>
+          <FadeIn>
+            <h1 className="text-5xl md:text-6xl font-bold text-white">About Prchan Tourism</h1>
+          </FadeIn>
         </div>
       </section>
 
@@ -39,7 +38,7 @@ export default function AboutUsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             {/* Image */}
-            <div className="flex-1 w-full">
+            <FadeIn direction="left" className="flex-1 w-full">
               <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/images/warsaw-square.jpg"
@@ -48,10 +47,10 @@ export default function AboutUsPage() {
                   className="object-cover"
                 />
               </div>
-            </div>
+            </FadeIn>
 
             {/* Content */}
-            <div className="flex-1">
+            <FadeIn direction="right" className="flex-1">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Poland Based Destination Management Company
               </h2>
@@ -71,7 +70,7 @@ export default function AboutUsPage() {
                   We are registered in the Central Registry of Tour Operators
                 </p>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -79,25 +78,31 @@ export default function AboutUsPage() {
       {/* Our Services Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Services</h2>
-          <ul className="space-y-4">
-            {services.map((service, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <svg className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                </svg>
-                <span className="text-gray-600">{service}</span>
-              </li>
-            ))}
-          </ul>
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Services</h2>
+          </FadeIn>
+          <StaggerContainer>
+            <ul className="space-y-4">
+              {services.map((service, index) => (
+                <StaggerItem key={index}>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </svg>
+                    <span className="text-gray-600">{service}</span>
+                  </li>
+                </StaggerItem>
+              ))}
+            </ul>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Contact Form Section */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+        <FadeIn className="max-w-7xl mx-auto">
           <ContactForm />
-        </div>
+        </FadeIn>
       </section>
     </>
   );

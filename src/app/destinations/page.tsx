@@ -1,11 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Destinations - Prchan Tourism",
-  description: "Traveling to Poland and Europe is a great opportunity to explore new places, enjoy spectacular views and immerse yourself in the unique atmosphere of a foreign culture.",
-};
+import { FadeIn } from "@/components/ScrollAnimation";
 
 const destinations = [
   {
@@ -100,8 +97,9 @@ export default function DestinationsPage() {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {destinations.map((destination, index) => (
-            <div
+            <FadeIn
               key={destination.name}
+              direction={index % 2 === 0 ? "left" : "right"}
               className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 py-16 ${
                 index !== destinations.length - 1 ? "border-b border-gray-100" : ""
               }`}
@@ -138,14 +136,14 @@ export default function DestinationsPage() {
                   />
                 </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </section>
 
       {/* Contact Us CTA Section */}
       <section className="bg-primary py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center text-white">
+        <FadeIn className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h2>
           <p className="text-lg mb-8 opacity-90">Contact us to create your personalized trip</p>
           <Link
@@ -154,7 +152,7 @@ export default function DestinationsPage() {
           >
             Send Us A Message
           </Link>
-        </div>
+        </FadeIn>
       </section>
     </>
   );
