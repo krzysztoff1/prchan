@@ -49,7 +49,7 @@ export default function Home() {
             Certified Tour Operator
           </h2>
           <Link
-            href="#"
+            href="/certificate"
             className="inline-block bg-primary text-white px-10 py-4 rounded-md font-semibold hover:bg-primary-dark transition-colors uppercase tracking-wide"
           >
             View Certificate
