@@ -121,7 +121,7 @@ export default function TripsPage() {
             />
             <button
               type="submit"
-              className="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary-dark transition-colors"
+              className="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
             >
               Subscribe
             </button>

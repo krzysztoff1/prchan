@@ -34,7 +34,7 @@ export default function Home() {
           <FadeIn delay={0.2}>
             <Link
               href="/contact"
-              className="inline-block bg-primary text-white px-10 py-4 rounded-md font-semibold text-lg hover:bg-primary-dark transition-colors uppercase tracking-wide"
+              className="inline-block bg-primary text-white px-10 py-4 rounded-md font-semibold text-lg hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 transition-colors uppercase tracking-wide"
             >
               Contact Us
             </Link>
@@ -50,7 +50,7 @@ export default function Home() {
           </h2>
           <Link
             href="/certificate"
-            className="inline-block bg-primary text-white px-10 py-4 rounded-md font-semibold hover:bg-primary-dark transition-colors uppercase tracking-wide"
+            className="inline-block bg-primary text-white px-10 py-4 rounded-md font-semibold hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors uppercase tracking-wide"
           >
             View Certificate
           </Link>
@@ -72,7 +72,7 @@ export default function Home() {
             />
             <button
               type="submit"
-              className="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary-dark transition-colors"
+              className="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
             >
               Subscribe
             </button>
@@ -98,9 +98,9 @@ export default function Home() {
               </h2>
               <Link
                 href="mailto:info@prchan-tourism.com"
-                className="inline-block bg-white text-primary px-10 py-4 rounded-md font-semibold hover:bg-gray-100 transition-colors uppercase tracking-wide"
+                className="inline-block bg-white text-primary px-10 py-4 rounded-md font-semibold hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary transition-colors uppercase tracking-wide"
               >
-                Sends Us An Email
+                Contact Us
               </Link>
             </div>
           </ScaleIn>

@@ -27,12 +27,12 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="lg:col-span-3">
-            <nav className="flex flex-wrap justify-start lg:justify-end gap-8">
+            <nav className="flex flex-wrap justify-start lg:justify-end gap-8" aria-label="Footer navigation">
               {footerLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-primary transition-colors font-medium"
+                  className="text-gray-700 hover:text-primary focus:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded px-1 transition-colors font-medium"
                 >
                   {link.label}
                 </Link>

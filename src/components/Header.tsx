@@ -32,12 +32,12 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" role="navigation" aria-label="Main navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-gray-700 hover:text-primary transition-colors font-medium ${
+              className={`text-gray-700 hover:text-primary focus:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded px-1 transition-colors font-medium ${
                 pathname === link.href ? "text-primary" : ""
               }`}
             >
@@ -46,17 +46,19 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="bg-primary text-white px-6 py-2.5 rounded-md font-medium hover:bg-primary-dark transition-colors"
+            className="bg-primary text-white px-6 py-2.5 rounded-md font-medium hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
           >
-            CONTACT
+            Contact Us
           </Link>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-3 rounded-md hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {isMobileMenuOpen ? (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,13 +74,13 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <nav className="md:hidden mt-4 pt-4 border-t">
+        <nav id="mobile-menu" className="md:hidden mt-4 pt-4 border-t" role="navigation" aria-label="Mobile navigation">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-gray-700 hover:text-primary transition-colors font-medium ${
+                className={`text-gray-700 hover:text-primary focus:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded px-1 transition-colors font-medium ${
                   pathname === link.href ? "text-primary" : ""
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -88,10 +90,10 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="bg-primary text-white px-6 py-2.5 rounded-md font-medium hover:bg-primary-dark transition-colors text-center"
+              className="bg-primary text-white px-6 py-2.5 rounded-md font-medium hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              CONTACT
+              Contact Us
             </Link>
           </div>
         </nav>

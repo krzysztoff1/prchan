@@ -119,7 +119,7 @@ export default function DestinationsPage() {
                 </p>
                 <Link
                   href={`/destinations/${destination.name.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="inline-block bg-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-primary-dark transition-colors uppercase tracking-wide"
+                  className="inline-block bg-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors uppercase tracking-wide"
                 >
                   Explore
                 </Link>
@@ -148,9 +148,9 @@ export default function DestinationsPage() {
           <p className="text-lg mb-8 opacity-90">Contact us to create your personalized trip</p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-primary px-10 py-4 rounded-md font-semibold hover:bg-gray-100 transition-colors uppercase tracking-wide"
+            className="inline-block bg-white text-primary px-10 py-4 rounded-md font-semibold hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary transition-colors uppercase tracking-wide"
           >
-            Send Us A Message
+            Contact Us
           </Link>
         </FadeIn>
       </section>
